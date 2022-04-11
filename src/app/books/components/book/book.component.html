@@ -1,0 +1,13 @@
+<article class="m-3">
+    <h1>{{ book.title }}</h1>
+    <h2>{{ book.author }}</h2>
+    <h2>{{ book.year }}</h2>
+    <p>{{ book.description }}</p>
+    <a routerLink="../../">Back</a>
+
+    <bs-add-review [forBook]="book.id" (submittedReview)="onReviewSubmitted($event)"></bs-add-review>
+
+    <section class="d-flex flex-column gap-2">
+        <bs-review *ngFor="let review of reviews" [review]="review"></bs-review>
+    </section>
+</article>
